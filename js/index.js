@@ -94,13 +94,16 @@ const displayAllPlants = (plant) => {
       const existingItem = cartData.find((item) => item.name === element.name);
       if (existingItem) {
         existingItem.quantity++;
+                showCustomAlert(`${element.name} quantity increased to ${existingItem.quantity}`);
       } else {
         cartData.push({
           name: element.name,
           price: element.price,
           quantity: 1,
         });
+            showCustomAlert(`${element.name} added to your cart`);
       }
+            // showCustomAlert(`${element.name} added to your cart`);
       updateCart();
     });
   });
@@ -180,11 +183,27 @@ const removeActive = () => {
   });
 };
 
-//  console.log(cartBtns)
 
-// const data={
-//   name=
-// }
+// custom alert message 
+function showCustomAlert(message) {
+  document.querySelector("#custom-alert p").innerHTML = message;
+  document.getElementById("custom-alert").classList.remove("hidden");
+}
+
+function closeAlert() {
+  document.getElementById("custom-alert").classList.add("hidden");
+}
+
+// spiner
+const spinerManager = (status) => {
+  if (status == true) {
+    document.getElementById("spiner-div").classList.remove("hidden");
+    document.getElementById("word-container").classList.add("hidden");
+  } else {
+    document.getElementById("word-container").classList.remove("hidden");
+    document.getElementById("spiner-div").classList.add("hidden");
+  }
+};
 
 loadAllCategories();
 LoadAllPants();
