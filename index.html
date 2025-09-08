@@ -139,10 +139,15 @@
       </h1>
     <div id="all_here" class="">
          <div class="flex w-11/12 mx-auto">
-        <div class="w-[250px] "></div>
+        <div class="w-[250px] ">
+            <h1 class="inter-font font-semibold text-xl">Categories</h1>
+            <div id="all-catagories-container">
+
+            </div>
+        </div>
         <div
           id="all-plants-container"
-          class="w-[1000px]  grid grid-cols-3 justify-around gap-8"
+          class="w-[1000px]  grid grid-cols-3 justify-around gap-4"
         >
           <!-- <div class="bg-white w-72">hi</div>
           <div class="bg-white w-72">hi</div>
@@ -152,8 +157,40 @@
       </div>
 
     </div>
-     
     </section>
+    <!-- plant detail section -->
+     <section>
+        <div  class="">
+
+        </div>
+     </section>
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="category_modal.showModal()">open modal</button> -->
+<dialog id="plant-detail-modal"  class="modal modal-bottom sm:modal-middle bg-white">
+  <div class="modal-box">
+    <div id="plants-detail-container" >
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
+
+
+
+
+
+
+
+
+    <!--  -->
     <!-- <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-6">
 
     <div class="">
@@ -172,7 +209,7 @@
       
     </div>
   </div> -->
-
+<!--  -->
     <script src="./js/index.js"></script>
   </body>
 </html>
