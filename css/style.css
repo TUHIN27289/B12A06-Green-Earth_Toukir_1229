@@ -2,3 +2,12 @@
 .inter-font{
   font-family: "Inter", sans-serif;
 }
+
+/* class=" inter-font font-normal  text-left text-gray-800 w-40 pt-2 pb-2 pl-4 rounded-lg  hover:bg-[#15803D] hover:text-white transition duration-200">${element.category_name} */
+.active{
+font-weight: normal;
+  text-align: left;
+  background-color: #15803D;
+  color: white;
+  font-size: 16px;
+}

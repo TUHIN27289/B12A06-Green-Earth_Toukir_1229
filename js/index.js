@@ -5,6 +5,9 @@ const LoadAllPants = () => {
     .then((dat) => {
       // console.log(dat)
       const singlePlant = dat.plants;
+      removeActive();
+      const allBtn=document.getElementById("ctg-all")
+      allBtn.classList.add('active')
       displayAllPlants(singlePlant);
     });
 };
@@ -44,6 +47,7 @@ const loadAllCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((dat) => {
+    
       // console.log(dat.categories)
       displayAllCategory(dat.categories);
     });
@@ -57,9 +61,10 @@ const displayAllCategory = (categories) => {
 
   categories.forEach((element) => {
     const cateDiv = document.createElement("div");
+    
     cateDiv.innerHTML = `
         <div class="mt-2">
-        <button onclick="displayPlanByCategory(${element.id})" class="btn ">${element.category_name}</button>
+        <button id="ctg-btn-${element.id}" onclick="displayPlanByCategory(${element.id})"  class="cat-btn inter-font font-normal  text-left text-gray-800 w-40 pt-2 pb-2 pl-4 rounded-lg  hover:bg-[#15803D] hover:text-white transition duration-200">${element.category_name}</button>
         </div>
         `;
     allCatagoriesContainer.appendChild(cateDiv);
@@ -70,7 +75,11 @@ const displayPlanByCategory = (id) => {
   fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then((res) => res.json())
     .then((dat) => {
-      console.log(dat.plants);
+    //   console.log(dat.plants);
+    removeActive();
+    const clickCtgBtn=document.getElementById(`ctg-btn-${id}`)
+    clickCtgBtn.classList.add('active')
+    // console.log(clickCtgBtn)
       displayAllPlants(dat.plants);
     });
 };
@@ -101,6 +110,13 @@ const displayPlantsDetail = (element) => {
     `;
 };
 
+// remove active class
+const removeActive=()=>{
+    const catBtns=document.querySelectorAll(".cat-btn");
+    catBtns.forEach((element)=>{
+        element.classList.remove('active');
+    })
+}
 loadAllCategories();
 LoadAllPants();
 // loadPlantDetail();
