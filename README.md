@@ -95,6 +95,16 @@ https://openapi.programming-hero.com/api/plant/1
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
 
+1.var is function scoped and can be redeclared, while let and const are block scoped. let can be updated, but const cannot be reassigned.
+
+2.map() returns a new array, forEach() just loops without returning, and filter() returns elements that match a condition.
+
+3.Arrow functions are a shorter way to write functions. They also use the parent’s this instead of creating their own.
+
+4.Destructuring allows extracting values from arrays or objects into variables. Example: const [a,b] = [1,2]; const {x,y} = {x:10,y:20};.
+
+5.Template literals use backticks (`) and ${}for variables. They are cleaner and support multi-line strings unlike+` concatenation.
+
 ## ⚙️ Functionalities 
 
 1) Category Loading 
@@ -163,7 +173,7 @@ Clicking a tree name on a card opens a modal with full tree details.
 
 
 ## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
+- **Live Link :** https://greenearth-toukir1229.netlify.app/
+- **GitHub Private Repository:** https://github.com/programming-hero-web-course2/b12-green-eaarth-TUHIN27289 
 
 ---

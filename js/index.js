@@ -28,7 +28,7 @@ const updateCart = () => {
 
     const newCart = document.createElement("div");
     newCart.innerHTML = `
-      <div class="flex justify-between bg-green-100 p-2 rounded-2xl my-2">
+      <div class="flex justify-between bg-green-100 p-2 rounded-2xl my-2 border border-cyan-300 shadow-2xl">
         <div>
           <p class="inter-font font-medium text-sm text-gray-800 mt-2">${
             item.name
@@ -81,7 +81,7 @@ const displayAllPlants = (plant) => {
         <p class="inter-font font-normal text-xs mt-2">${element.description}</p>
         </div>
         <div class="flex justify-between mt-3">
-        <p class="inter-font font-normal text-sm bg-green-100 text-green-700
+        <p class="inter-font font-normal text-sm bg-green-100 text-green-700 border border-cyan-500 shadow-xl
    rounded-2xl m-2 p-2">${element.category}</p>
         <p class="inter-font font-semibold text-sm m-2 p-2 text-green-900">৳<span>${element.price}</span></p>
         </div>
@@ -134,7 +134,7 @@ const displayAllCategory = (categories) => {
 
     cateDiv.innerHTML = `
         <div class="mt-2 ">
-        <button id="ctg-btn-${element.id}" onclick="displayPlanByCategory(${element.id})"  class="cat-btn inter-font font-normal md:text-base text-sm text-center md:text-left text-gray-800 md:w-40 w-32 pt-2 pb-2 md:pl-4 pl-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition duration-200 bg-green-300 md:bg-transparent">${element.category_name}</button>
+        <button id="ctg-btn-${element.id}" onclick="displayPlanByCategory(${element.id})"  class="cat-btn inter-font font-normal md:text-base text-sm text-center md:text-left text-gray-800 md:w-40 w-32 pt-2 pb-2 md:pl-4 pl-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition duration-200 bg-green-300 border border-cyan-500 shadow-2xl md:bg-transparent">${element.category_name}</button>
         </div>
         `;
     allCatagoriesContainer.appendChild(cateDiv);
