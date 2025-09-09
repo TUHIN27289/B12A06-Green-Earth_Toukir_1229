@@ -1,5 +1,6 @@
 // load all pants
 const LoadAllPants = () => {
+    spinerManager(true); // show spinner before fetch
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((dat) => {
@@ -9,6 +10,8 @@ const LoadAllPants = () => {
       const allBtn = document.getElementById("ctg-all");
       allBtn.classList.add("active");
       displayAllPlants(singlePlant);
+      spinerManager(false)
+      
     });
 };
 
@@ -63,6 +66,7 @@ const removeFromCart = (plantName) => {
 // display all plants
 const displayAllPlants = (plant) => {
   //  console.log(plant)
+  
   const allPlantsContainer = document.getElementById("all-plants-container");
   allPlantsContainer.innerHTML = "";
   plant.forEach((element) => {
@@ -107,6 +111,7 @@ const displayAllPlants = (plant) => {
       updateCart();
     });
   });
+  
 };
 // load all categories
 const loadAllCategories = () => {
@@ -137,6 +142,7 @@ const displayAllCategory = (categories) => {
 };
 // display plants by category
 const displayPlanByCategory = (id) => {
+  spinerManager(true);
   fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then((res) => res.json())
     .then((dat) => {
@@ -146,16 +152,19 @@ const displayPlanByCategory = (id) => {
       clickCtgBtn.classList.add("active");
       // console.log(clickCtgBtn)
       displayAllPlants(dat.plants);
+      spinerManager(false);
     });
 };
 // load plants detail
 const loadPlantDetail = (id) => {
   document.getElementById("plant-detail-modal").showModal();
+  spinerModal(true);
   fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
     .then((dat) => {
       // console.log(dat.plants)
       displayPlantsDetail(dat.plants);
+      spinerModal(false);
     });
 };
 // display plan detail
@@ -194,14 +203,25 @@ function closeAlert() {
   document.getElementById("custom-alert").classList.add("hidden");
 }
 
-// spiner
+// spiner plan
 const spinerManager = (status) => {
   if (status == true) {
     document.getElementById("spiner-div").classList.remove("hidden");
-    document.getElementById("word-container").classList.add("hidden");
+    document.getElementById("all-plants-container").classList.add("hidden");
   } else {
-    document.getElementById("word-container").classList.remove("hidden");
+    document.getElementById("all-plants-container").classList.remove("hidden");
     document.getElementById("spiner-div").classList.add("hidden");
+  }
+};
+
+// spiner modal
+const spinerModal = (status) => {
+  if (status == true) {
+    document.getElementById("spiner-modal").classList.remove("hidden");
+    document.getElementById("plants-detail-container").classList.add("hidden");
+  } else {
+    document.getElementById("plants-detail-container").classList.remove("hidden");
+    document.getElementById("spiner-modal").classList.add("hidden");
   }
 };
 

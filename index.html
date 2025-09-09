@@ -67,7 +67,7 @@
             </ul>
           </div>
           <a
-            class="btn btn-ghost text-xl md:text-2xl text-white inter-font font-semibold"
+            class=" text-xl md:text-2xl text-white inter-font font-semibold  hover:bg-[#15803D] hover:text-white transition duration-200"
             >Green Earth</a
           >
         </div>
@@ -75,7 +75,7 @@
           <ul
             class="menu menu-horizontal px-1 inter-font font-normal text-base text-white"
           >
-            <li><a>About</a></li>
+            <li><a >About</a></li>
             <li><a>Gallery</a></li>
             <li><a>Plant a Tree</a></li>
             <!-- <li>
@@ -136,7 +136,13 @@
     <section class="bg-green-50 px-4 py-10">
       <h1 class="text-center inter-font font-medium text-3xl pb-10">
         Choose Your Trees
+        <!-- spiner -->
+      <div id="spiner-div" class="hidden" class="flex justify-center items-center mt-4">
+        <span class="loading loading-bars loading-xl"></span>
+      </div> 
       </h1>
+ 
+
       <div id="all_here" class="">
         <div class="flex w-11/12 mx-auto gap-6">
           <div class="w-[250px]">
@@ -155,9 +161,7 @@
             id="all-plants-container"
             class="w-[1000px] grid grid-cols-3 justify-around gap-4"
           >
-            <!-- <div class="bg-white w-72">hi</div>
-          <div class="bg-white w-72">hi</div>
-          <div class="bg-white w-72">hi</div> -->
+          
           </div>
           <div class="w-[250px] bg-white rounded-md p-2 shadow-2xl">
             <h1 class="inter-font font-semibold text-xl mb-2">Your Cart</h1>
@@ -180,6 +184,9 @@
       id="plant-detail-modal"
       class="modal modal-bottom sm:modal-middle bg-white"
     >
+    <div id="spiner-modal" class="hidden" class="flex justify-center items-center mt-4">
+        <span class="loading loading-bars loading-xl"></span>
+      </div> 
       <div class="modal-box">
         <div id="plants-detail-container"></div>
         <div class="modal-action">
