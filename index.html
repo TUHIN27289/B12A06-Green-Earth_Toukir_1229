@@ -29,7 +29,7 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body class="md:w-full w-[415px]">
     <!-- header section -->
     <section class="bg-[#15803D]">
       <div class="navbar w-11/12 mx-auto">
@@ -134,24 +134,27 @@
     </section>
     <!-- choice your tree section -->
     <section class="bg-green-50 px-4 py-10">
-      <h1 class="text-center inter-font font-medium text-3xl pb-10">
+      <h1 class="text-center inter-font font-medium md:text-3xl text-2xl pb-10">
         Choose Your Trees
         <!-- spiner -->
       <div id="spiner-div" class="hidden" class="flex justify-center items-center mt-4">
         <span class="loading loading-bars loading-xl"></span>
+         <!-- <span class="loading loading-dots loading-xl"></span> -->
       </div> 
       </h1>
  
 
       <div id="all_here" class="">
-        <div class="flex w-11/12 mx-auto gap-6">
-          <div class="w-[250px]">
-            <h1 class="inter-font font-semibold text-xl mb-2">Categories</h1>
-            <div id="all-catagories-container">
+        <!-- <div class="flex flex-col md:flex-row  md:w-11/12 mx-auto md:gap-6 gap-1"> -->
+        <div class="flex flex-col md:flex-row  md:w-11/12 mx-auto md:gap-6 gap-1">
+
+          <div class="md:w-[250px]  ">
+            <h1 class="inter-font font-semibold md:text-xl text-lg mb-2 text-center md:text-left md:ml-0 ">Categories</h1>
+            <div id="all-catagories-container" class="grid md:grid-cols-1 grid-cols-3 md:gap-0 gap-4" >
               <button
                 id="ctg-all"
                 onclick="LoadAllPants()"
-                class="inter-font font-normal text-left text-gray-800 w-40 pt-2 pb-2 pl-4 rounded-lg hover:bg-[#15803D] hover:text-white transition duration-200 cat-btn"
+                class="inter-font font-normal md:text-base text-sm  text-left text-gray-800 md:w-40 w-32  h-10 mt-2  pt-2 pb-2 md:pl-4 pl-2 rounded-lg hover:bg-[#15803D] hover:text-white bg-green-300 md:bg-transparent transition duration-200 cat-btn "
               >
                 All Trees
               </button>
@@ -159,7 +162,7 @@
           </div>
           <div
             id="all-plants-container"
-            class="w-[1000px] grid grid-cols-3 justify-around gap-4"
+            class="md:w-[1000px] w-[390px] grid md:grid-cols-3 grid-cols-1 justify-around gap-4"
           >
           
           </div>
@@ -167,8 +170,8 @@
             <h1 class="inter-font font-semibold text-xl mb-2">Your Cart</h1>
             <div id="your-cart-container"></div>
             <div class="flex justify-between">
-              <h1>Total:</h1>
-              <p>৳<span>0</span></p>
+              <h1 class="inter-font font-normal text-base text-gray-600">Total:</h1>
+              <p class="inter-font font-normal text-base text-gray-600">৳<span>0</span></p>
             </div>
           </div>
         </div>
@@ -182,7 +185,7 @@
     <!-- About the Campaign section -->
      <section class="bg-green-50 pb-14">
       <h1 class="text-center pt-8 inter-font font-semibold text-3xl pb-6">About the Campaign</h1>
-      <div class="flex justify-center items-center w-[890px] mx-auto gap-4">
+      <div class="flex justify-center items-center md:w-[890px]  mx-auto gap-4">
         <div class="flex-1">
           <img src="./assets/about.png" alt="">
         </div>
@@ -200,20 +203,20 @@
      </section>
      <!-- Our Impact -->
       <section class="bg-green-200 ">
-        <div class="w-11/12 mx-auto  pb-16">
+        <div class="w-11/12 mx-auto ml-24 pb-16">
            <h1 class="text-center pt-16 inter-font font-semibold text-3xl ">Our Impact</h1>
-        <div class="flex text-center justify-around pt-6 ">
-          <div class="bg-white p-4 w-96 rounded-xl">
+        <div class="flex text-center space-x-10 pt-6 ">
+          <div class="bg-white p-6 w-96 rounded-xl ">
             <h1 class="inter-font font-semibold text-3xl text-green-700
 ">500K+</h1>
             <p class="inter-font font-normal text-base text-gray-500">Trees Planted</p>
           </div>
-          <div class="bg-white mx-auto p-4 w-96 rounded-lg">
+          <div class="bg-white mx-auto p-6 w-96 rounded-lg">
             <h1 class="inter-font font-semibold text-3xl text-green-700
 " >120+</h1>
             <p class="inter-font font-normal text-base text-gray-500">Communities Involved</p>
           </div>
-          <div class="bg-white mx-auto p-4 w-96 rounded-lg">
+          <div class="bg-white mx-auto p-6 w-96 rounded-lg">
             <h1 class="inter-font font-semibold text-3xl text-green-700
 ">30+</h1>
             <p class="inter-font font-normal text-base text-gray-500">Countries Reached</p>
@@ -257,6 +260,7 @@
     >
     <div id="spiner-modal" class="hidden" class="flex justify-center items-center mt-4">
         <span class="loading loading-bars loading-xl"></span>
+         <!-- <span class="loading loading-dots loading-xl"></span> -->
       </div> 
       <div class="modal-box">
         <div id="plants-detail-container"></div>
@@ -271,7 +275,7 @@
     <!-- custom alert -->
      <div class="hidden"id="custom-alert">
         <div  class=" fixed flex justify-center  inset-0 bg-opacity-50">
-      <div class="p-6 rounded-lg text-white bg-black  shadow-lg w-96 h-36 md:w-[450px] md:h-36">
+      <div class="p-6 rounded-lg text-white bg-black  shadow-lg w-72 h-34 md:w-[450px] md:h-36">
         <h2 class="text-lg font-semibold mb-4 text-left">
           Green-Earth.app says:
         </h2>
@@ -288,7 +292,7 @@
         
       </div>
     </div>
-    </div>
+   
     
 
     <!--  -->

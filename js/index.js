@@ -133,8 +133,8 @@ const displayAllCategory = (categories) => {
     const cateDiv = document.createElement("div");
 
     cateDiv.innerHTML = `
-        <div class="mt-2">
-        <button id="ctg-btn-${element.id}" onclick="displayPlanByCategory(${element.id})"  class="cat-btn inter-font font-normal  text-left text-gray-800 w-40 pt-2 pb-2 pl-4 rounded-lg  hover:bg-[#15803D] hover:text-white transition duration-200">${element.category_name}</button>
+        <div class="mt-2 ">
+        <button id="ctg-btn-${element.id}" onclick="displayPlanByCategory(${element.id})"  class="cat-btn inter-font font-normal md:text-base text-sm text-center md:text-left text-gray-800 md:w-40 w-32 pt-2 pb-2 md:pl-4 pl-2 rounded-lg  hover:bg-[#15803D] hover:text-white transition duration-200 bg-green-300 md:bg-transparent">${element.category_name}</button>
         </div>
         `;
     allCatagoriesContainer.appendChild(cateDiv);
@@ -176,7 +176,7 @@ const displayPlantsDetail = (element) => {
     <div class="bg-white  h-[420px]  rounded-md ">
         
 <button btn onclick="loadPlantDetail(${element.id})" class="text-gray-800 inter-font font-bold text-lg mb-3">${element.name}</button>
-        <img src="${element.image}" alt="${element.name}" class="w-full h-64 object-cover rounded mb-2" />
+        <img src="${element.image}" alt="${element.name}" class="md:w-full w-[350px] h-64 object-cover rounded mb-2" />
  <p class="inter-font font-normal text-sm mb-2 "> <span class="inter-font font-semibold text-base">Category:</span> ${element.category}</p>
         <span class="inter-font font-normal text-sm mb-2"> <span class="inter-font font-semibold text-base"> Price: </span> ৳${element.price}</span>
         <p class="inter-font font-normal text-sm mt-2"> <span class="inter-font font-semibold text-base">Description: </span> ${element.description}</p>
